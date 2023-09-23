@@ -1,62 +1,91 @@
-<?php
-$nb1 = 0;
-$nb2 = 0;
-$resultat = '';
-
-if (isset($_POST['operation'])) {
-    $nb1 = $_POST['nb1'];
-    $nb2 = $_POST['nb2'];
-
-    switch ($_POST['operation']) {
-        case 'Additioner':
-            $resultat = $nb1 + $nb2;
-            break;
-        case 'Soustraire':
-            $resultat = $nb1 - $nb2;
-            break;
-        case 'Multiplier':
-            $resultat = $nb1 * $nb2;
-            break;
-        case 'Diviser':
-            if ($nb2 != 0) {
-                $resultat = $nb1 / $nb2;
-            } else {
-                $resultat = 'Division par 0 impossible';
-            }
-            break;
-        default:
-            $resultat = 'Opération non supportée';
-            break;
-    }
-}
-?>
-
 <!DOCTYPE html>
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>La calculatrice</title>
+    <title>Calculatrice en ligne</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+        h1 {
+            background-color: #51555b;
+            color: white;
+            padding: 20px;
+        }
+        p {
+            font-size: 18px;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        form {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin: 20px auto;
+            width: 300px;
+        }
+        label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .btn-container {
+            display: flex;
+            justify-content: space-between;
+        }
+        .btn-container input[type="submit"] {
+            flex: 1;
+            margin: 5px;
+            background-color: #51555b;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+    </style>
 </head>
 <body>
-<h1>Exercice : la calculatrice</h1>
-
-<p>Créer une calculatrice en ligne proposant les opérations d’addition, de soustraction, de division et de puissance. Les contraintes sont les suivantes : </p>
-<ul>
-    <li>La calculatrice n’est constituée que d’un seul formulaire.</li>
-    <li>A chaque opération est associé un bouton submit.</li>
-    <li>Les zones de saisie de texte permettant de rentrer les deux opérandes doivent rester visibles (ainsi que les valeurs associées) lors de l’affichage du résultat.</li>
-</ul>
-
-<form action="Ex2-calculatrice.php" method="post">
-    <b>Calculatrice en ligne</b> <br />
-    <b>Nombre 1</b> <input type="text" name="nb1" value="<?php echo $nb1; ?>" required><br />
-    <b>Nombre 2</b> <input type="text" name="nb2" value="<?php echo $nb2; ?>" required><br />
-    <b>Résultat</b> <input type="text" name="resultat" value="<?php echo $resultat; ?>" readonly><br />
-    <b>Opérateurs</b>
-    <input type="submit" name="operation" value="Additioner">
-    <input type="submit" name="operation" value="Soustraire">
-    <input type="submit" name="operation" value="Multiplier">
-    <input type="submit" name="operation" value="Diviser">
-</form>
+    <h1>Calculatrice en ligne</h1>
+    <form action="Ex2-calculatrice.php" method="post">
+        <ul>
+            <li>
+                <label for="nb1">Nombre 1</label>
+                <input type="text" name="nb1" value="<?php echo $nb1; ?>" required>
+            </li>
+            <li>
+                <label for="nb2">Nombre 2</label>
+                <input type="text" name="nb2" value="<?php echo $nb2; ?>" required>
+            </li>
+            <li>
+                <label for="resultat">Résultat</label>
+                <input type="text" name="resultat" value="<?php echo $resultat; ?>" readonly>
+            </li>
+            <li class="btn-container">
+                <input type="submit" name="operation" value="Additionner">
+                <input type="submit" name="operation" value="Soustraire">
+            </li>
+            <li class="btn-container">
+                <input type="submit" name="operation" value="Multiplier">
+                <input type="submit" name="operation" value="Diviser">
+            </li>
+        </ul>
+    </form>
 </body>
 </html>
