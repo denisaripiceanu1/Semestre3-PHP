@@ -99,21 +99,15 @@
     </form>
 
     <h2>Recherche de contacts</h2>
-    <p>Proposer un script recherche.php constitué d’un formulaire de saisie d’un ou plusieurs mots-clés, et permettant de retrouver certains contacts enregistrés dans la base. Sur validation du formulaire, ce même script devra afficher, sous la forme d’un tableau HTML, les contacts correspondant aux critères spécifiés par l’utilisateur ainsi que leurs caractéristiques (nom, prénom, adresse, code postal, ville, téléphone).</p>
+    <p>Proposer un script <i>recherche.php</i> constitué d’un formulaire de saisie d’un ou plusieurs mots-clés, et permettant de retrouver certains contacts enregistrés dans la base. Sur validation du formulaire, ce même script devra afficher, sous la forme d’un tableau HTML, les contacts correspondant aux critères spécifiés par l’utilisateur ainsi que leurs caractéristiques (nom, prénom, adresse, code postal, ville, téléphone).</p>
     <p>Aussi, pour chaque contact, associer deux hyperliens dédiés respectivement à la modification et à la suppression du contact.</p>
-    <p><span class="solution">SOLUTION :</span></p>
-    <form action="recherche.php" method="post">
-        <label for="recherche">Rechercher un contact par nom :</label>
-        <input type="text" name="recherche" id="recherche" required><br />
-        <input type="submit" value="Rechercher">
-    </form>
+    <p><a href="recherche.php">Effectuer une recherche</a></p>
 
     <h2>Modification d'un contact</h2>
     <p>L’hyperlien associé à la modification d’un contact doit mener au script <i>modification.php</i> proposant un formulaire similaire à celui réalisé pour l’insertion d’un nouveau contact, mis à part que les champs du formulaire devront être pré-remplis.</p>
-    <p><span class="solution">SOLUTION :</span></p>
+
 
     <h2>Suppression d'un contact</h2>
     <p>L’hyperlien associé à la suppression d’un contact doit mener au script <i>suppression.php</i> demandant à l’utilisateur la confirmation de la suppression du contact. En cas de validation, le contact correspondant sera supprimé de la base de données et l’utilisateur sera automatiquement redirigé vers la page recherche.php.</p>
-    <p><span class="solution">SOLUTION :</span></p>
 </body>
 </html>
