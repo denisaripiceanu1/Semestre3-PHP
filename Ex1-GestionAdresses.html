@@ -3,57 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Exercice : gestion de carnet d'adresses avec MySQL</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            background-color: #51555b;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        h2 {
-            background-color: #51555b;
-            color: white;
-            padding: 10px;
-        }
-        p {
-            font-size: 16px;
-        }
-        ul {
-            list-style-type: disc;
-            margin-left: 20px;
-        }
-        form {
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-        }
-        input[type="reset"], input[type="submit"] {
-            background-color:  #51555b;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 20px;
-            cursor: pointer;
-        }
-        input[type="reset"]:hover, input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-        .solution {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="Ex1-styles.css">
 </head>
 <body>
     <h1>Gestion de carnet d'adresses avec MySQL</h1>
@@ -70,12 +20,13 @@
     <p>Créer un fichier <i>saisie.html</i> permettant de saisir un nouveau contact. Ce fichier contiendra un formulaire constitué des éléments suivants :</p>
     <ul>
         <li>Un champ de type text correspondant à chacun des éléments à saisir.</li>
+        <li>Un champ de type text correspondant à chacun des éléments à saisir.</li>
         <li>Un bouton de type reset pour vider les champs du formulaire.</li>
         <li>Un bouton de type submit pour valider le formulaire.</li>
     </ul>
     <p>La validation du formulaire déclenchera l’exécution du script ajoutcontact.php chargé d’enregistrer les informations dans la base tout en s’assurant que le nouveau contact saisi n’est pas déjà présent dans la base.</p>
     <p><span class="solution">SOLUTION :</span></p>
-    <form action="ajoutcontact.php" method="post">
+    <form action="Ex1-ajoutcontact.php" method="post">
         <label for="nom">Nom :</label>
         <input type="text" name="nom" id="nom" required><br />
 
@@ -94,14 +45,14 @@
         <label for="tel">Téléphone :</label>
         <input type="text" name="tel" id="tel" required><br />
 
-        <input type="reset" value="Effacer">
         <input type="submit" value="Ajouter le contact">
+        <input type="reset" value="Effacer">
     </form>
 
     <h2>Recherche de contacts</h2>
     <p>Proposer un script <i>recherche.php</i> constitué d’un formulaire de saisie d’un ou plusieurs mots-clés, et permettant de retrouver certains contacts enregistrés dans la base. Sur validation du formulaire, ce même script devra afficher, sous la forme d’un tableau HTML, les contacts correspondant aux critères spécifiés par l’utilisateur ainsi que leurs caractéristiques (nom, prénom, adresse, code postal, ville, téléphone).</p>
     <p>Aussi, pour chaque contact, associer deux hyperliens dédiés respectivement à la modification et à la suppression du contact.</p>
-    <p><a href="recherche.php">Effectuer une recherche</a></p>
+    <p><a href="Ex1-recherche.php">Effectuer une recherche</a></p>
 
     <h2>Modification d'un contact</h2>
     <p>L’hyperlien associé à la modification d’un contact doit mener au script <i>modification.php</i> proposant un formulaire similaire à celui réalisé pour l’insertion d’un nouveau contact, mis à part que les champs du formulaire devront être pré-remplis.</p>
