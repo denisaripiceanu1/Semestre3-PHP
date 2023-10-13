@@ -3,48 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Modification de Contact</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            background-color: #51555b;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        form {
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-        }
-        input[type="reset"], input[type="submit"] {
-            background-color:  #51555b;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 20px;
-            cursor: pointer;
-        }
-        input[type="reset"]:hover, input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="Ex1-styles.css">
 </head>
 <body>
     <h1>Modification de Contact</h1>
 
     <?php
-    // Votre configuration de connexion à la base de données
+    // Configuration de connexion à la base de données
     $server = 'localhost';
     $login = 'root';
     $mdp = '';
@@ -90,7 +55,7 @@
             }
 
             // Afficher le formulaire de modification avec les données mises à jour
-            echo '<form method="POST" action="modification.php?id=' . $id . '">
+            echo '<form method="POST" action="Ex1-modification.php?id=' . $id . '">
                     <input type="hidden" name="id" value="' . $id . '">
                     <label for="nom">Nom :</label>
                     <input type="text" name="nom" id="nom" value="' . $contact['nom'] . '">
@@ -116,7 +81,7 @@
     // Afficher le message de succès ici
     echo '<p>' . $message . '</p>';
     // Ajout du lien de retour à la saisie
-    echo '<p><a href="Ex1-saisie.html">Vous voulez ajouter un nouveau contact?</a></p>';
+    echo '<p><a href="Ex1-GestionAdresses.html">Vous voulez ajouter un nouveau contact?</a></p>';
     ?>
 </body>
 </html>
