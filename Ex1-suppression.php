@@ -3,49 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <title>Suppression de Contact</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-        }
-        h1 {
-            background-color: #51555b;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        p {
-            margin: 10px;
-        }
-        form {
-            margin-top: 20px;
-            font-size: 14px;
-        }
-        label {
-            display: block;
-            margin-top: 10px;
-        }
-        input[type="text"] {
-            width: 100%;
-            padding: 10px;
-            margin-top: 5px;
-        }
-        input[type="submit"] {
-            background-color:  #51555b;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            margin-top: 20px;
-            cursor: pointer;
-        }
-        input[type="submit"]:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="Ex1-styles.css">
 </head>
 <body>
     <?php
-    // Votre configuration de connexion à la base de données
+    // Configuration de connexion à la base de données
     $server = 'localhost';
     $login = 'root';
     $mdp = '';
@@ -68,17 +30,17 @@
         $contact = $query->fetch();
 
         if ($contact) {
-            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirmation']) && ($_POST['confirmation'] === 'oui' || $_POST['confirmation'] === 'Oui')) {
+            if (isset($_POST['confirmation']) && ($_POST['confirmation'] === 'oui' || $_POST['confirmation'] === 'Oui')) {
                 // Supprimer le contact de la base de données
                 $deleteQuery = $linkpdo->prepare('DELETE FROM carnet WHERE id_personne = :id');
                 $deleteQuery->execute(array('id' => $id));
 
-                // Rediriger vers la page recherche.php
-                header('Location: recherche.php');
+                // Rediriger vers la page Ex1-recherche.php
+                header('Location: Ex1-recherche.php');
                 exit();
-            } elseif ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['confirmation']) && ($_POST['confirmation'] === 'non'|| $_POST['confirmation'] === 'Non')) {
-                // Rediriger vers la page recherche.php sans supprimer le contact
-                header('Location: recherche.php');
+            } elseif (isset($_POST['confirmation']) && ($_POST['confirmation'] === 'non'|| $_POST['confirmation'] === 'Non')) {
+                // Rediriger vers la page Ex1-recherche.php sans supprimer le contact
+                header('Location: Ex1-recherche.php');
                 exit();
             }
 
@@ -87,7 +49,7 @@
             echo '<p>Êtes-vous sûr de vouloir supprimer le contact suivant ?</p>';
             echo '<p>Nom : ' . $contact['nom'] . '</p>';
             echo '<p>Prénom : ' . $contact['prénom'] . '</p>';
-            echo '<form method="POST" action="suppression.php?id=' . $id . '">';
+            echo '<form method="POST" action="Ex1-suppression.php?id=' . $id . '">';
             echo '<label for="confirmation">Confirmez la suppression (oui/non) :</label>';
             echo '<input type="text" name="confirmation" id="confirmation" required>';
             echo '<input type="submit" value="Valider">';
