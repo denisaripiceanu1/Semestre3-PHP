@@ -88,14 +88,13 @@
 <body>
     <h1>Recherche de Contacts</h1>
 
-    <form method="POST" action="recherche.php">
+    <form method="POST" action="Ex1-recherche.php">
         <label for="mots_cles">Mots-clés :</label>
         <input type="text" name="mots_cles" id="mots_cles">
         <input type="submit" value="Rechercher">
     </form>
 
     <?php
-    // Votre configuration de connexion à la base de données
     $server = 'localhost';
     $login = 'root';
     $mdp = '';
@@ -135,9 +134,9 @@
                         <td>'.$row['ville'].'</td>
                         <td>'.$row['téléphone'].'</td>
                         <td>
-                            <a href="modification.php?id='.$row['id_personne'].'">Modifier</a>
+                            <a href="Ex1-modification.php?id='.$row['id_personne'].'">Modifier</a>
                             <p>ou</p>
-                            <a href="suppression.php?id='.$row['id_personne'].'">Supprimer</a>
+                            <a href="Ex1-suppression.php?id='.$row['id_personne'].'">Supprimer</a>
                         </td>
                       </tr>';
             }
@@ -148,7 +147,7 @@
         }
     }
     // Ajout du lien de retour à la saisie
-    echo '<p><a href="Ex1-saisie.html">Vous voulez ajouter un nouveau contact?</a></p>';
+    echo '<p><a href="Ex1-GestionAdresses.html">Vous voulez ajouter un nouveau contact?</a></p>';
     ?>
 </body>
 </html>
