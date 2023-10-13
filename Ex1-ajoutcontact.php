@@ -3,31 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>Ajout de Contact</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f5f5f5;
-        }
-        h1 {
-            background-color: #51555b;
-            color: white;
-            padding: 10px;
-            text-align: center;
-        }
-        p {
-            font-size: 16px;
-            text-align: center;
-            margin-top: 20px;
-        }
-        a {
-            text-decoration: none;
-            color: #0056b3;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="Ex1-styles.css">
 </head>
 <body>
     <h1>Ajout de Contact</h1>
@@ -73,6 +49,6 @@
         }
     }
     ?>
-    <p><a href="Ex1-saisie.html">Vous voulez ajouter un nouveau contact?</a></p>
+    <p><a href="Ex1-GestionAdresses.html">Vous voulez ajouter un nouveau contact?</a></p>
 </body>
 </html>
