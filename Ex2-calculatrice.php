@@ -1,3 +1,38 @@
+<?php
+ #2. la calculatrice
+ $nb1 = 0;
+ $nb2 = 0;
+ $resultat = 0;
+
+ if(isset($_POST['operation'])){
+     //Récupération des paramètres du formulaire
+      $nb1 = $_POST['nb1'];
+      $nb2 = $_POST['nb2'];
+
+      switch($_POST['operation']){
+         case 'Additionner':
+             $resultat = $nb1 + $nb2;
+             break;
+         case 'Soustraire':
+             $resultat = $nb1 - $nb2;
+             break;
+         case 'Diviser':
+             if($nb2 != 0){
+                 $resultat = $nb1 / $nb2;
+             } else {
+                 $resultat = "Division par zéro impossible.";
+             }
+             break;
+         case 'Multiplier':
+             $resultat = $nb1 * $nb2;
+             break;
+         default:
+             $resultat = "Opération non supportée.";
+             break;
+         }
+ }
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -63,7 +98,7 @@
 </head>
 <body>
     <h1>Calculatrice en ligne</h1>
-    <form action="Ex2-calculatrice.php" method="post">
+    <form action="traitementEx2.php" method="post">
         <ul>
             <li>
                 <label for="nb1">Nombre 1</label>
